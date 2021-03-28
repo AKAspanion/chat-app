@@ -3,6 +3,7 @@ import './styles.css';
 const TextField = ({
   className = '',
   type,
+  value,
   placeholder,
   icon = false,
   onIconClick,
@@ -19,6 +20,7 @@ const TextField = ({
     <div className={`input__wrapper ${className}`.trim()}>
       <input
         type={type}
+        value={value}
         placeholder={placeholder}
         onKeyPress={event => handler(onKeyPress, event.key)}
         onChange={({ target: { value } }) => handler(onChange, value)}

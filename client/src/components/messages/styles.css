@@ -1,0 +1,15 @@
+.messages__wrapper {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.messages__container {
+  display: flex;
+  overflow-y: auto;
+  padding-bottom: 24px;
+  flex-direction: column;
+  max-height: calc(100% - 60px - 24px);
+}

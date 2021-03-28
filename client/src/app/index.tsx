@@ -44,11 +44,13 @@ const App = () => {
   };
 
   const sendMessage = (event: MessageEvent) => {
-    event.preventDefault();
-
-    const timestamp = new Date().valueOf();
+    if (event) {
+      event.preventDefault();
+    }
 
     if (message) {
+      const timestamp = new Date().valueOf();
+
       socket.emit('sendMessage', { message, timestamp }, () => setMessage(''));
     }
   };

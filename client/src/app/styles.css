@@ -9,7 +9,7 @@
 
 #root {
   --text-color-primary: rgba(0, 0, 0, 0.86);
-  --text-color-scondary: rgba(0, 0, 0, 0.7);
+  --text-color-secondary: rgba(0, 0, 0, 0.7);
   --text-color-diabled: rgba(0, 0, 0, 0.56);
 
   --primary: #2255be;
