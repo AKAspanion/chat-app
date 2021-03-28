@@ -1,4 +1,4 @@
-import { Button, Messages } from '../../components';
+import { Button, Messages, Users } from '../../components';
 
 import './styles.css';
 
@@ -16,10 +16,12 @@ const Chat = ({
       <div className="chat__container">
         <div className="chat__header">
           <div className="chat__name">{room}</div>
-          <Button>LEAVE</Button>
+          <Button onClick={() => window.location.reload()}>LEAVE</Button>
         </div>
         <div className="chat__body">
-          <div className="chat__users">{JSON.stringify(users)}</div>
+          <div className="chat__users">
+            <Users users={users} />
+          </div>
           <div className="chat__messages">
             <Messages
               name={name}

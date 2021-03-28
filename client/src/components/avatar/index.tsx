@@ -1,6 +1,6 @@
 import './styles.css';
 
-const Avatar = ({ name }: any) => {
+const Avatar = ({ name, altBg = false }: any) => {
   const initials = () => {
     let initial = '';
 
@@ -21,7 +21,7 @@ const Avatar = ({ name }: any) => {
   };
 
   return (
-    <div title={name} className="avatar">
+    <div title={name} className={`avatar ${altBg ? 'avatar--bg' : ''}`.trim()}>
       {initials()}
     </div>
   );

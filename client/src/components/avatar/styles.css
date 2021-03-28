@@ -10,3 +10,7 @@
   background: var(--white);
   color: var(--text-color-primary);
 }
+
+.avatar.avatar--bg {
+  background: var(--primary-bg);
+}

@@ -33,6 +33,7 @@
 .chat__body {
   display: flex;
   align-items: start;
+  width: calc(100% + 24px);
   height: calc(100% - 48px - 24px);
   justify-content: flex-start;
 }
@@ -46,11 +47,13 @@
 }
 
 .chat__users {
-  width: 240px;
+  width: 280px;
 }
 
 .chat__messages {
-  width: calc(100% - 240px);
+  right: 24px;
+  position: relative;
+  width: calc(100% - 280px);
 }
 
 @media (max-width: 640px) {
