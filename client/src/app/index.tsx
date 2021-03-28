@@ -5,6 +5,9 @@ import { Alert } from '../components';
 import { Join, Chat } from '../views';
 import './styles.css';
 
+const alert = require('../assets/alert.wav');
+const audio = new Audio(alert.default);
+
 const URL = 'http://localhost:8021';
 let socket = io(URL, { transports: ['websocket'] });
 
@@ -20,6 +23,10 @@ const App = () => {
 
   useLayoutEffect(() => {
     socket.on('message', message => {
+      if (message.user !== 'bot') {
+        audio.play();
+      }
+
       setMessages(messages => [...messages, message]);
     });
 
