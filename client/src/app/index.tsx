@@ -89,6 +89,7 @@ const App = () => {
           setAlertMessage('Please wait a moment before sending again');
           setShowAlert(true);
 
+          olderTimestamp = timestamp;
           return;
         }
       }
