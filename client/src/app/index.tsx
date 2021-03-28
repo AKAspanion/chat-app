@@ -119,6 +119,7 @@ const App = () => {
   return (
     <div className="app">
       <Alert
+        dark={dark}
         show={showAlert}
         message={alertMessage}
         onChange={(value: boolean) => setShowAlert(value)}

@@ -25,6 +25,10 @@ const Join = ({ onJoin }: any) => {
         <Button block onClick={() => onJoin && onJoin({ name, room })}>
           JOIN
         </Button>
+        <div className="join__info">i</div>
+        <div className="join__description">
+          Join a room and share the room name with friends to invite them.
+        </div>
       </div>
     </div>
   );
