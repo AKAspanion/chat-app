@@ -23,8 +23,13 @@ const App = () => {
       setMessages(messages => [...messages, message]);
     });
 
-    socket.on('roomData', ({ users }) => {
+    socket.on('roomData', ({ message, users }) => {
       setUsers(users);
+
+      if (message) {
+        setAlertMessage(message);
+        setShowAlert(true);
+      }
     });
 
     socket.on('leave', ({ error, devMessage }) => {
@@ -35,6 +40,8 @@ const App = () => {
   }, []);
 
   const reset = () => {
+    setAlertMessage('');
+    setShowAlert(false);
     setJoined(false);
     setMessages([]);
     setMessage('');

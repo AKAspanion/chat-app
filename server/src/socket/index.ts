@@ -75,6 +75,7 @@ const socket = (io: any) => {
           });
           io.to(user.room).emit('roomData', {
             room: user.room,
+            message: `${user.name} left!`,
             users: getUsersInRoom(user.room),
           });
         }

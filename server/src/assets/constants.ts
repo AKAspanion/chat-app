@@ -1,2 +1,2 @@
-export const USERNAME_ROOM_REQUIRED = 'Username and room are required.';
-export const USERNAME_UNAVAILABLE = 'Username is not available.';
+export const USERNAME_ROOM_REQUIRED = 'Name and Room are required.';
+export const USERNAME_UNAVAILABLE = 'Name is unavailable.';

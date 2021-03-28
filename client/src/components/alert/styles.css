@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 24px;
+  z-index: 1000;
   position: fixed;
   font-size: 14px;
   min-width: 200px;
@@ -18,7 +19,7 @@
 }
 
 .alert.alert--active {
-  transform: translate(calc(-50% - 24px), -20%);
+  transform: translate(calc(-50% - 24px), -80%);
 }
 
 .alert.alert--inactive {
