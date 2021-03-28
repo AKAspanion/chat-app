@@ -9,7 +9,7 @@
     "build": "tsc -p .",
     "prebuild": "rm -rf dist",
     "predeploy": "npm run build",
-    "deploy": "git add . && git commit -m Heroku && git push heroku master"
+    "deploy": "git add . && git commit -m 'Heroku deploy' && git push heroku master"
   },
   "author": "",
   "license": "ISC",
