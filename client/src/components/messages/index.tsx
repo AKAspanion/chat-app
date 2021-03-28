@@ -6,8 +6,16 @@ import Message from '../message';
 import './styles.css';
 
 import sendIcon from '../../assets/send.svg';
+import sendDarkIcon from '../../assets/send-dark.svg';
 
-const Messages = ({ name, onSend, message, messages, setMessage }: any) => {
+const Messages = ({
+  name,
+  dark,
+  onSend,
+  message,
+  messages,
+  setMessage,
+}: any) => {
   const messagesRef: any = useRef(null);
 
   useLayoutEffect(() => {
@@ -33,9 +41,9 @@ const Messages = ({ name, onSend, message, messages, setMessage }: any) => {
       </div>
       <TextField
         value={message}
-        icon={sendIcon}
         onIconClick={() => onSend()}
         placeholder="Type a message here..."
+        icon={dark ? sendDarkIcon : sendIcon}
         onChange={(value: string) => setMessage(value)}
         onKeyPress={(key: string) => (key === 'Enter' ? onSend() : null)}
       />

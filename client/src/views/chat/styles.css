@@ -27,7 +27,31 @@
 .chat__name {
   font-size: 28px;
   font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: var(--text-color-primary);
+}
+
+.chat__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat__theme {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-right: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 11px 10px 9px;
+  transition: background 0.3s ease;
+}
+.chat__theme:hover {
+  background: var(--primary-bg);
 }
 
 .chat__body {
@@ -62,7 +86,11 @@
     padding: 0px;
     visibility: hidden;
   }
+  .chat__body {
+    width: 100%;
+  }
   .chat__messages {
     width: 100%;
+    position: static;
   }
 }

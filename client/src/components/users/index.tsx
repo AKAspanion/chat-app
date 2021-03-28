@@ -8,7 +8,9 @@ const Users = ({ users }: any) => {
       {users.map(({ id, name }: any) => (
         <div key={id} className="user__wrapper">
           <Avatar altBg name={name} />
-          <div className="user__name">{name}</div>
+          <div title={name} className="user__name">
+            {name}
+          </div>
         </div>
       ))}
     </div>

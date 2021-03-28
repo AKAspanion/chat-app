@@ -7,14 +7,12 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-#root {
-  --text-color-primary: rgba(0, 0, 0, 0.86);
-  --text-color-secondary: rgba(0, 0, 0, 0.7);
-  --text-color-diabled: rgba(0, 0, 0, 0.56);
+.app {
+  background: var(--primary-bg);
+  height: 100vh;
+  width: auto;
+}
 
-  --primary: #2255be;
-  --primary-bg: #f3f6ff;
-
-  --white: #ffffff;
-  --black: #222222;
+::placeholder {
+  color: var(--text-color-disabled);
 }

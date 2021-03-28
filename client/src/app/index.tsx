@@ -1,8 +1,14 @@
 import { useLayoutEffect, useState } from 'react';
 import { io } from 'socket.io-client';
-import { Alert } from '../components';
 
 import { Join, Chat } from '../views';
+import { Alert } from '../components';
+import {
+  darkCSSVariables,
+  lightCSSVariables,
+  overrideThemeVariables,
+} from '../util';
+
 import './styles.css';
 
 const alert = require('../assets/alert.wav');
@@ -17,6 +23,7 @@ const App = () => {
   const [users, setUsers] = useState<any[]>([]);
   const [message, setMessage] = useState<string>('');
   const [messages, setMessages] = useState<string[]>([]);
+  const [dark, setDark] = useState<boolean>(false);
   const [joined, setJoined] = useState<boolean>(false);
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [alertMessage, setAlertMessage] = useState<string>('');
@@ -44,6 +51,8 @@ const App = () => {
 
       reset();
     });
+
+    handleTheme(localStorage.getItem('dark') === 'true');
   }, []);
 
   const reset = () => {
@@ -55,6 +64,16 @@ const App = () => {
     setUsers([]);
     setName('');
     setRoom('');
+  };
+
+  const handleTheme = (value: boolean) => {
+    localStorage.setItem('dark', String(value));
+
+    console.trace(value);
+
+    setDark(value);
+
+    overrideThemeVariables(value ? darkCSSVariables : lightCSSVariables);
   };
 
   const sendMessage = (event: MessageEvent) => {
@@ -86,13 +105,7 @@ const App = () => {
   };
 
   return (
-    <div
-      style={{
-        background: '#F3F6FF',
-        height: '100vh',
-        width: 'auto',
-      }}
-    >
+    <div className="app">
       <Alert
         show={showAlert}
         message={alertMessage}
@@ -100,13 +113,15 @@ const App = () => {
       />
       {joined ? (
         <Chat
+          dark={dark}
           name={name}
           room={room}
           users={users}
           message={message}
           messages={messages}
-          setMessage={setMessage}
           onSend={sendMessage}
+          onTheme={handleTheme}
+          setMessage={setMessage}
         />
       ) : (
         <Join onJoin={onJoin} />

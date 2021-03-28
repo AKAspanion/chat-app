@@ -35,8 +35,9 @@
   width: 100%;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   background: transparent;
+  color: var(--text-color-primary);
 }
 .input--shrunk {
   width: calc(100% - 42px);

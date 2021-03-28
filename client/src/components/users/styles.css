@@ -14,7 +14,6 @@
 
 .user__wrapper {
   padding-top: 12px;
-  padding-right: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -23,5 +22,9 @@
 .user__name {
   font-size: 16px;
   padding: 0px 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 68px);
   color: var(--text-color-primary);
 }
