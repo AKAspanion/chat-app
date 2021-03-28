@@ -17,6 +17,8 @@ const audio = new Audio(alert.default);
 const URL = 'https://spanion-chat.herokuapp.com';
 let socket = io(URL, { transports: ['websocket'] });
 
+let olderTimestamp: any;
+
 const App = () => {
   const [name, setName] = useState<string>('');
   const [room, setRoom] = useState<string>('');
@@ -69,8 +71,6 @@ const App = () => {
   const handleTheme = (value: boolean) => {
     localStorage.setItem('dark', String(value));
 
-    console.trace(value);
-
     setDark(value);
 
     overrideThemeVariables(value ? darkCSSVariables : lightCSSVariables);
@@ -83,6 +83,17 @@ const App = () => {
 
     if (message) {
       const timestamp = new Date().valueOf();
+
+      if (olderTimestamp) {
+        if (Math.abs(olderTimestamp - timestamp) < 750) {
+          setAlertMessage('Please wait a moment before sending again');
+          setShowAlert(true);
+
+          return;
+        }
+      }
+
+      olderTimestamp = timestamp;
 
       socket.emit('sendMessage', { message, timestamp }, () => setMessage(''));
     }
