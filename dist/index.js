@@ -9,7 +9,7 @@ const express_1 = __importDefault(require("express"));
 const socket_io_1 = require("socket.io");
 const router_1 = __importDefault(require("./src/router"));
 const socket_1 = __importDefault(require("./src/socket"));
-const port = 8021;
+const port = process.env.PORT || 8021;
 const app = express_1.default();
 const httpServer = http_1.default.createServer(app);
 app.use(cors_1.default);

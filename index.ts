@@ -1,4 +1,4 @@
-import cors from 'cors';
+// import cors from 'cors';
 import http from 'http';
 import express from 'express';
 import { Server } from 'socket.io';
@@ -12,7 +12,7 @@ const app = express();
 
 const httpServer = http.createServer(app);
 
-app.use(cors);
+// app.use(cors);
 
 app.use(router);
 
