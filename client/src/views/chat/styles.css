@@ -56,7 +56,7 @@
 
 .chat__body {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   width: calc(100% + 24px);
   height: calc(100% - 48px - 24px);
   justify-content: flex-start;

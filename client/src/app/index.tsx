@@ -14,7 +14,7 @@ import './styles.css';
 const alert = require('../assets/alert.wav');
 const audio = new Audio(alert.default);
 
-const URL = 'http://localhost:8021';
+const URL = 'https://spanion-chat.herokuapp.com';
 let socket = io(URL, { transports: ['websocket'] });
 
 const App = () => {
