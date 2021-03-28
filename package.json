@@ -11,8 +11,11 @@
     "predeploy": "npm run build",
     "deploy": "git add . && git commit -m 'Heroku deploy' && git push heroku master"
   },
-  "author": "",
+  "author": "Ankit Kumar Pandit",
   "license": "ISC",
+  "engines": {
+    "node": "12.16.3"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
