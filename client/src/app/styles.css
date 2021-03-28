@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'Courier New', Courier, monospace;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  --text-color-primary: rgba(0, 0, 0, 0.86);
+  --text-color-scondary: rgba(0, 0, 0, 0.7);
+  --text-color-diabled: rgba(0, 0, 0, 0.56);
+
+  --primary: #2255be;
+  --primary-bg: #f3f6ff;
+
+  --white: #ffffff;
+  --black: #222222;
+}
