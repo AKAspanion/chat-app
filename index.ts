@@ -6,7 +6,7 @@ import { Server } from 'socket.io';
 import router from './src/router';
 import socket from './src/socket';
 
-const port = 8021;
+const port = process.env.PORT || 8021;
 
 const app = express();
 
