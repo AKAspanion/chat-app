@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cc2f3e50.chunk.css",
+    "main.js": "/static/js/main.1d8f736b.chunk.js",
+    "main.js.map": "/static/js/main.1d8f736b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bcfd865b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bcfd865b.js.map",
+    "static/js/2.2ab06db2.chunk.js": "/static/js/2.2ab06db2.chunk.js",
+    "static/js/2.2ab06db2.chunk.js.map": "/static/js/2.2ab06db2.chunk.js.map",
+    "static/js/3.112f2a8d.chunk.js": "/static/js/3.112f2a8d.chunk.js",
+    "static/js/3.112f2a8d.chunk.js.map": "/static/js/3.112f2a8d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.cc2f3e50.chunk.css.map": "/static/css/main.cc2f3e50.chunk.css.map",
+    "static/js/2.2ab06db2.chunk.js.LICENSE.txt": "/static/js/2.2ab06db2.chunk.js.LICENSE.txt",
+    "static/media/alert.wav": "/static/media/alert.439ffe7a.wav",
+    "static/media/close.dc95cfa2.svg": "/static/media/close.dc95cfa2.svg",
+    "static/media/moon.84c0949c.svg": "/static/media/moon.84c0949c.svg",
+    "static/media/send-dark.2eaae009.svg": "/static/media/send-dark.2eaae009.svg",
+    "static/media/send.623ea14f.svg": "/static/media/send.623ea14f.svg",
+    "static/media/sun.81a752cc.svg": "/static/media/sun.81a752cc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bcfd865b.js",
+    "static/js/2.2ab06db2.chunk.js",
+    "static/css/main.cc2f3e50.chunk.css",
+    "static/js/main.1d8f736b.chunk.js"
+  ]
+}
