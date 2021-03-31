@@ -59,9 +59,9 @@
 }
 
 .chat__menu {
-  padding: 8px;
+  padding: 10px;
   display: none;
-  margin-right: 4px;
+  margin-right: 8px;
 }
 .chat__menu img {
   width: 36px;
