@@ -21,7 +21,7 @@
   align-items: center;
   background: var(--white);
   justify-content: space-between;
-  width: calc(100% - 48px - 32px);
+  width: calc(100% - 48px - 48px);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -45,12 +45,12 @@
   width: 24px;
   height: 24px;
   display: flex;
+  padding: 10px;
   cursor: pointer;
   border-radius: 50%;
   margin-right: 12px;
   align-items: center;
   justify-content: center;
-  padding: 10px 11px 10px 9px;
   transition: background 0.3s ease;
 }
 .chat__theme:hover,
@@ -114,6 +114,7 @@
   }
   .chat__header {
     padding-left: 12px;
+    width: calc(100% - 48px - 36px);
   }
   .chat__menu {
     display: flex;
