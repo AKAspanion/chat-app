@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUsersInRoom = exports.getUser = exports.removeUser = exports.addUser = void 0;
 const constants_1 = require("../assets/constants");
 const users = [];
-const addUser = ({ id, name = '', room = '' }) => {
+const addUser = ({ id, name = "", room = "" }) => {
     try {
         name = name.trim().toLowerCase();
         room = room.trim().toLowerCase();
