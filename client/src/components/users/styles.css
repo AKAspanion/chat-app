@@ -1,0 +1,30 @@
+.users__wrapper {
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--white);
+  height: calc(100% - 48px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.users__heading {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-color-primary);
+}
+
+.user__wrapper {
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user__name {
+  font-size: 16px;
+  padding: 0px 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 68px);
+  color: var(--text-color-primary);
+}
