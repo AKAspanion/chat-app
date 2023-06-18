@@ -1,0 +1,126 @@
+.chat__wrapper {
+  background: var(--primary);
+  height: calc(100vh - 48px);
+  padding: 24px;
+}
+
+.chat__container {
+  margin: 0 auto;
+  padding-top: 24px;
+  max-width: 1000px;
+  border-radius: 24px;
+  height: calc(100% - 48px);
+  background: var(--primary-bg);
+}
+
+.chat__header {
+  margin: 0px 24px;
+  display: flex;
+  padding: 12px 24px;
+  border-radius: 24px;
+  align-items: center;
+  background: var(--white);
+  justify-content: space-between;
+  width: calc(100% - 48px - 48px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.chat__name {
+  font-size: 28px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--text-color-primary);
+}
+
+.chat__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat__menu,
+.chat__theme {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-right: 12px;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+.chat__theme:hover,
+.chat__menu:hover {
+  background: var(--primary-bg);
+}
+
+.chat__menu {
+  padding: 10px;
+  display: none;
+  margin-right: 8px;
+}
+.chat__menu img {
+  width: 36px;
+  height: 36px;
+}
+
+.chat__body {
+  display: flex;
+  align-items: flex-start;
+  width: calc(100% + 24px);
+  height: calc(100% - 48px - 24px);
+  justify-content: flex-start;
+}
+
+.chat__users,
+.chat__messages {
+  padding: 24px;
+  overflow-y: auto;
+  border-radius: 24px;
+  height: calc(100% - 48px);
+}
+
+.chat__users {
+  width: 280px;
+}
+
+.chat__messages {
+  right: 24px;
+  position: relative;
+  width: calc(100% - 280px);
+}
+
+@media (max-width: 640px) {
+  .chat__users {
+    padding: 24px;
+    position: absolute;
+    visibility: hidden;
+    width: calc(100% - 48px);
+  }
+  .chat__users.chat__users--show {
+    visibility: visible;
+  }
+  .chat__body {
+    width: 100%;
+    position: relative;
+  }
+  .chat__messages {
+    width: 100%;
+    position: static;
+  }
+  .chat__header {
+    padding-left: 12px;
+    width: calc(100% - 48px - 36px);
+  }
+  .chat__menu {
+    display: flex;
+  }
+
+  .chat__menu:hover {
+    background: var(--primary-bg);
+  }
+}
