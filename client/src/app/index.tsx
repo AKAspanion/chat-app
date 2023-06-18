@@ -15,7 +15,8 @@ const alert = require('../assets/alert.wav')
 const audio = new Audio(alert.default)
 
 const URL =
-  process?.env?.REACT_APP_BACKEND_URL || 'https://spanion-chat.herokuapp.com'
+  process?.env?.REACT_APP_BACKEND_URL ||
+  'https://spanion-chat-app-service.onrender.com/'
 let socket = io(URL, { transports: ['websocket'] })
 
 let olderTimestamp: any

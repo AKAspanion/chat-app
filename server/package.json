@@ -8,8 +8,7 @@
     "start": "node dist/index.js",
     "build": "tsc -p .",
     "prebuild": "rm -rf dist",
-    "predeploy": "npm run build",
-    "deploy": "git add . && git commit -m 'Heroku deploy' && git push heroku master"
+    "predeploy": "npm run build"
   },
   "author": "Ankit Kumar Pandit",
   "license": "ISC",
