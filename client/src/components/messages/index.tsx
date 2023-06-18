@@ -1,12 +1,12 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react'
 
-import TextField from '../text-field';
-import Message from '../message';
+import TextField from '../text-field'
+import Message from '../message'
 
-import './styles.css';
+import './styles.css'
 
-import sendIcon from '../../assets/send.svg';
-import sendDarkIcon from '../../assets/send-dark.svg';
+import sendIcon from '../../assets/send.svg'
+import sendDarkIcon from '../../assets/send-dark.svg'
 
 const Messages = ({
   name,
@@ -16,14 +16,14 @@ const Messages = ({
   messages,
   setMessage,
 }: any) => {
-  const messagesRef: any = useRef(null);
+  const messagesRef: any = useRef(null)
 
   useLayoutEffect(() => {
     if (messagesRef.current) {
-      const elem: any = messagesRef.current;
-      elem.scrollTop = elem.scrollHeight;
+      const elem: any = messagesRef.current
+      elem.scrollTop = elem.scrollHeight
     }
-  }, [messages]);
+  }, [messages])
 
   return (
     <div className="messages__wrapper">
@@ -48,7 +48,7 @@ const Messages = ({
         onKeyPress={(key: string) => (key === 'Enter' ? onSend() : null)}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Messages;
+export default Messages

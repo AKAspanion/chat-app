@@ -1,121 +1,121 @@
-import { useLayoutEffect, useState } from "react";
-import { io } from "socket.io-client";
+import { useLayoutEffect, useState } from 'react'
+import { io } from 'socket.io-client'
 
-import { Join, Chat } from "../views";
-import { Alert } from "../components";
+import { Join, Chat } from '../views'
+import { Alert } from '../components'
 import {
   darkCSSVariables,
   lightCSSVariables,
   overrideThemeVariables,
-} from "../util";
+} from '../util'
 
-import "./styles.css";
+import './styles.css'
 
-const alert = require("../assets/alert.wav");
-const audio = new Audio(alert.default);
+const alert = require('../assets/alert.wav')
+const audio = new Audio(alert.default)
 
 const URL =
-  process?.env?.REACT_APP_BACKEND_URL || "https://spanion-chat.herokuapp.com";
-let socket = io(URL, { transports: ["websocket"] });
+  process?.env?.REACT_APP_BACKEND_URL || 'https://spanion-chat.herokuapp.com'
+let socket = io(URL, { transports: ['websocket'] })
 
-let olderTimestamp: any;
+let olderTimestamp: any
 
 const App = () => {
-  const [name, setName] = useState<string>("");
-  const [room, setRoom] = useState<string>("");
-  const [users, setUsers] = useState<any[]>([]);
-  const [message, setMessage] = useState<string>("");
-  const [messages, setMessages] = useState<string[]>([]);
-  const [dark, setDark] = useState<boolean>(false);
-  const [joined, setJoined] = useState<boolean>(false);
-  const [showAlert, setShowAlert] = useState<boolean>(false);
-  const [alertMessage, setAlertMessage] = useState<string>("");
+  const [name, setName] = useState<string>('')
+  const [room, setRoom] = useState<string>('')
+  const [users, setUsers] = useState<any[]>([])
+  const [message, setMessage] = useState<string>('')
+  const [messages, setMessages] = useState<string[]>([])
+  const [dark, setDark] = useState<boolean>(false)
+  const [joined, setJoined] = useState<boolean>(false)
+  const [showAlert, setShowAlert] = useState<boolean>(false)
+  const [alertMessage, setAlertMessage] = useState<string>('')
 
   useLayoutEffect(() => {
-    socket.on("message", (message) => {
-      if (message.user !== "bot") {
-        audio.play();
+    socket.on('message', (message) => {
+      if (message.user !== 'bot') {
+        audio.play()
       }
 
-      setMessages((messages) => [...messages, message]);
-    });
+      setMessages((messages) => [...messages, message])
+    })
 
-    socket.on("roomData", ({ message, users }) => {
-      setUsers(users);
+    socket.on('roomData', ({ message, users }) => {
+      setUsers(users)
 
       if (message) {
-        setAlertMessage(message);
-        setShowAlert(true);
+        setAlertMessage(message)
+        setShowAlert(true)
       }
-    });
+    })
 
-    socket.on("leave", ({ error, devMessage }) => {
-      console.error({ error, devMessage });
+    socket.on('leave', ({ error, devMessage }) => {
+      console.error({ error, devMessage })
 
-      reset();
-    });
+      reset()
+    })
 
-    handleTheme(localStorage.getItem("dark") === "true");
-  }, []);
+    handleTheme(localStorage.getItem('dark') === 'true')
+  }, [])
 
   const reset = () => {
-    setAlertMessage("");
-    setShowAlert(false);
-    setJoined(false);
-    setMessages([]);
-    setMessage("");
-    setUsers([]);
-    setName("");
-    setRoom("");
-  };
+    setAlertMessage('')
+    setShowAlert(false)
+    setJoined(false)
+    setMessages([])
+    setMessage('')
+    setUsers([])
+    setName('')
+    setRoom('')
+  }
 
   const handleTheme = (value: boolean) => {
-    localStorage.setItem("dark", String(value));
+    localStorage.setItem('dark', String(value))
 
-    setDark(value);
+    setDark(value)
 
-    overrideThemeVariables(value ? darkCSSVariables : lightCSSVariables);
-  };
+    overrideThemeVariables(value ? darkCSSVariables : lightCSSVariables)
+  }
 
   const sendMessage = (event: MessageEvent) => {
     if (event) {
-      event.preventDefault();
+      event.preventDefault()
     }
 
     if (message) {
-      const timestamp = new Date().valueOf();
+      const timestamp = new Date().valueOf()
 
       if (olderTimestamp) {
         if (Math.abs(olderTimestamp - timestamp) < 750) {
-          setAlertMessage("Please wait a moment before sending again");
-          setShowAlert(true);
+          setAlertMessage('Please wait a moment before sending again')
+          setShowAlert(true)
 
-          olderTimestamp = timestamp;
-          return;
+          olderTimestamp = timestamp
+          return
         }
       }
 
-      olderTimestamp = timestamp;
+      olderTimestamp = timestamp
 
-      socket.emit("sendMessage", { message, timestamp }, () => setMessage(""));
+      socket.emit('sendMessage', { message, timestamp }, () => setMessage(''))
     }
-  };
+  }
 
   const onJoin = ({ name, room }: any) => {
-    setName(name);
-    setRoom(room);
+    setName(name)
+    setRoom(room)
 
-    socket.emit("join", { name, room }, (error: any) => {
+    socket.emit('join', { name, room }, (error: any) => {
       if (error) {
-        setAlertMessage(error);
-        setShowAlert(true);
+        setAlertMessage(error)
+        setShowAlert(true)
 
-        return;
+        return
       }
 
-      setJoined(true);
-    });
-  };
+      setJoined(true)
+    })
+  }
 
   return (
     <div className="app">
@@ -141,7 +141,7 @@ const App = () => {
         <Join onJoin={onJoin} />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

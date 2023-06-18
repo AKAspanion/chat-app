@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { Button, TextField } from '../../components';
-import './styles.css';
+import { Button, TextField } from '../../components'
+import './styles.css'
 
 const Join = ({ onJoin }: any) => {
-  const [name, setName] = useState<string>('');
-  const [room, setRoom] = useState<string>('');
+  const [name, setName] = useState<string>('')
+  const [room, setRoom] = useState<string>('')
 
   return (
     <div className="join__wrapper">
@@ -31,7 +31,7 @@ const Join = ({ onJoin }: any) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Join;
+export default Join

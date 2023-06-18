@@ -6,7 +6,7 @@ export const lightCSSVariables = {
   '--primary': '#2255be',
   '--white': '#ffffff',
   '--black': '#222222',
-};
+}
 
 export const darkCSSVariables = {
   '--text-color-primary': 'rgba(255, 255, 255, 1)',
@@ -16,24 +16,24 @@ export const darkCSSVariables = {
   '--primary': '#2255be',
   '--white': '#3d3d3d',
   '--black': '#000000',
-};
+}
 
 export const setCSSVariable = (element: any, variable: any, value: any) => {
   if (element && value) {
-    element.style.setProperty(variable, String(value));
+    element.style.setProperty(variable, String(value))
   }
-};
+}
 
 export const overrideThemeVariables = (themeObject: any) => {
-  const root = document.querySelector(':root');
-  const themeVariables = Object.keys(themeObject);
+  const root = document.querySelector(':root')
+  const themeVariables = Object.keys(themeObject)
 
   if (root && themeObject) {
-    themeVariables.forEach(themeVar => {
-      const varValue = themeObject[themeVar];
+    themeVariables.forEach((themeVar) => {
+      const varValue = themeObject[themeVar]
       if (varValue && themeVar.startsWith('--')) {
-        setCSSVariable(root, themeVar, varValue);
+        setCSSVariable(root, themeVar, varValue)
       }
-    });
+    })
   }
-};
+}

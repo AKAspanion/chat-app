@@ -1,5 +1,5 @@
-import { Avatar } from '..';
-import './styles.css';
+import { Avatar } from '..'
+import './styles.css'
 
 const Users = ({ users }: any) => {
   return (
@@ -14,7 +14,7 @@ const Users = ({ users }: any) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Users;
+export default Users

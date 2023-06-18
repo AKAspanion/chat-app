@@ -7,6 +7,7 @@
     "dev:server": "cd server && npm run dev",
     "dev:client": "cd client && npm run start",
     "build": "cd client && npm install && npm run build",
+    "format": "prettier --write .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d client/build"
   },
@@ -14,6 +15,7 @@
   "author": "Ankit Kumar Pandit",
   "license": "ISC",
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "prettier": "^2.8.8"
   }
 }

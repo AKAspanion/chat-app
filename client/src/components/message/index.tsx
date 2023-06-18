@@ -1,22 +1,21 @@
-import Avatar from '../avatar';
+import Avatar from '../avatar'
 
-import './styles.css';
+import './styles.css'
 
 const Message = ({ name, text, timestamp, user }: any) => {
-  const isCurrentUser = () => user.toLowerCase() === name.toLowerCase();
+  const isCurrentUser = () => user.toLowerCase() === name.toLowerCase()
 
-  const isBot = () => user === 'bot';
+  const isBot = () => user === 'bot'
 
   const time = () => {
-    const date = new Date(timestamp);
+    const date = new Date(timestamp)
 
-    const normalizeDigit = (digit: number) =>
-      `${digit < 10 ? '0' : ''}${digit}`;
+    const normalizeDigit = (digit: number) => `${digit < 10 ? '0' : ''}${digit}`
 
     return `${normalizeDigit(date.getHours())}:${normalizeDigit(
-      date.getMinutes(),
-    )}`;
-  };
+      date.getMinutes()
+    )}`
+  }
 
   return (
     <div
@@ -57,7 +56,7 @@ const Message = ({ name, text, timestamp, user }: any) => {
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Message;
+export default Message

@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
-import './styles.css';
-import close from '../../assets/close.svg';
-import closeDark from '../../assets/close-dark.svg';
+import './styles.css'
+import close from '../../assets/close.svg'
+import closeDark from '../../assets/close-dark.svg'
 
-let resetTimeout: any;
+let resetTimeout: any
 const Alert = ({ dark, show, message, timeout = 2500, onChange }: any) => {
   useEffect(() => {
     if (show) {
-      clearTimeout(resetTimeout);
+      clearTimeout(resetTimeout)
       resetTimeout = setTimeout(() => {
-        onChange && onChange(false);
-      }, timeout);
+        onChange && onChange(false)
+      }, timeout)
     }
-  }, [show, timeout, onChange]);
+  }, [show, timeout, onChange])
 
   return (
     <div className={`alert alert--${show ? 'active' : 'inactive'}`}>
@@ -26,7 +26,7 @@ const Alert = ({ dark, show, message, timeout = 2500, onChange }: any) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Alert;
+export default Alert

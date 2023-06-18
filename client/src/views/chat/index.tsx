@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { Button, Messages, Users } from '../../components';
+import { Button, Messages, Users } from '../../components'
 
-import './styles.css';
-import sun from '../../assets/sun.svg';
-import moon from '../../assets/moon.svg';
-import menu from '../../assets/menu.svg';
-import menuDark from '../../assets/menu-dark.svg';
+import './styles.css'
+import sun from '../../assets/sun.svg'
+import moon from '../../assets/moon.svg'
+import menu from '../../assets/menu.svg'
+import menuDark from '../../assets/menu-dark.svg'
 
 const Chat = ({
   dark,
@@ -19,7 +19,7 @@ const Chat = ({
   onTheme,
   onSend,
 }: any) => {
-  const [showUsers, setShowUsers] = useState<boolean>(false);
+  const [showUsers, setShowUsers] = useState<boolean>(false)
 
   return (
     <div className="chat__wrapper">
@@ -63,7 +63,7 @@ const Chat = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Chat;
+export default Chat
